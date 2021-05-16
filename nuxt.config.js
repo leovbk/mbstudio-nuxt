@@ -1,8 +1,8 @@
 export default {
   target: 'static',
-  // router: {
-  //   base: 'https://github.com/leovbk/mb-studio-public.git',
-  // },
+  router: {
+    base: 'https://github.com/leovbk/mbstudio-nuxt.git',
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'mb-studio-nuxt',
