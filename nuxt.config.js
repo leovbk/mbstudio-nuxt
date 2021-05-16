@@ -1,7 +1,10 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES' ? '/mbstudio-nuxt/' : '/'
+
 export default {
   target: 'static',
   router: {
-    base: 'https://github.com/leovbk/mbstudio-nuxt.git',
+    base: routerBase,
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
