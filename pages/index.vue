@@ -32,17 +32,6 @@ export default {
     window.scrollTo(0, 0)
     homeGsapAnimation()
   },
-  // methods: {
-
-  // },
-  // computed: {
-  //   parallaxBg2: function(){
-  //   const parallax = document.querySelector('.bg2')
-  //   window.addEventListener('scroll', () => {
-  //     parallax.style.backgroudPositionY = -window.scrollY / 4 + 'px'
-  //   })
-  //   }
-  // }
 }
 </script>
 
@@ -50,8 +39,8 @@ export default {
 .portrait {
   position: relative;
   top: 150px;
-  right: -700px;
-  width: 700px;
+  left: 48%;
+  width: 500px;
   height: fit-content;
   color: white;
   font-size: xx-large;
@@ -78,21 +67,21 @@ export default {
   font-weight: 300;
   color: white;
   font-family: Abuget, sans-serif;
-  font-size: 300px;
+  font-size: 330px;
   z-index: 1;
 }
 
 .mb {
   position: absolute;
-  top: 52vh;
-  left: 180px;
+  bottom: -10vh;
+  left: 12%;
   scale: 1;
 }
 
 .studio {
   position: absolute;
-  top: 52vh;
-  left: 510px;
+  bottom: -10vh;
+  left: 34%;
   scale: 1;
 }
 
@@ -133,5 +122,45 @@ export default {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 400px / 150px;
   filter: blur(50px);
+}
+
+@media (max-width: 1000px) {
+  .mb {
+    top: 30vh;
+  }
+  .studio {
+    left: 12%;
+    top: 55vh;
+  }
+  .bg1 p {
+    font-size: 300px;
+  }
+
+  .bg1 {
+    background-position: center;
+  }
+  .portrait {
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@media (max-width: 600px) {
+  .bg1 p {
+    font-size: 250px;
+  }
+  .mb {
+    top: 40vh;
+  }
+  .studio {
+    top: 60vh;
+  }
+  .portrait {
+    font-size: 25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    overflow: hidden;
+  }
 }
 </style>

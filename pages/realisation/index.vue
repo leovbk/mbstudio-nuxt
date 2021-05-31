@@ -12,7 +12,7 @@
             class="photo"
             :class="`photo${i + 1}`"
             :style="{
-              backgroundImage: `url(${require(`@/assets/images/projets/${id}/${cover}`)})`,
+              backgroundImage: `url(${cover})`,
             }"
           >
             <div class="photoLayer">
@@ -29,8 +29,6 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-import projetsData from '../../assets/projets-data'
-
 export default {
   name: 'Project',
   beforeRouteLeave(to, from, next) {
@@ -38,24 +36,58 @@ export default {
     tlReaOut.to('.photo', { opacity: 0, stagger: 0.1, duration: 0.5 })
     tlReaOut.call(next)
   },
-
   async asyncData({ $prismic, error }) {
     const document = await $prismic.api.query(
       $prismic.predicates.at('document.type', 'projet')
     )
-    console.log(document.results)
-    if (document) {
-      return { data: document.data }
-    } else {
-      error({ statusCode: 404, message: 'Page not found' })
+    const prismicProject = []
+    for (let i = 0; i < document.results.length; i++) {
+      prismicProject.push(document.results[i].data)
     }
+    return { prismicProject }
   },
 
   data() {
-    return { projetsData, projectIndex: '', projectName: '' }
+    return { projetsData: [], projectIndex: '', projectName: '' }
+  },
+  created() {
+    // map projet data
+    console.log(this.prismicProject)
+
+    for (const project in this.prismicProject) {
+      this.projetsData[project] = {
+        name: '',
+        id: '',
+        title: '',
+        phase: '',
+        lieu: '',
+        domaine: '',
+        credit: '',
+        bandeau: '',
+        photos: [],
+      }
+      this.projetsData[project].name = this.prismicProject[project].name
+      this.projetsData[project].id = this.prismicProject[project].url
+      this.projetsData[project].title = this.prismicProject[project].title
+      this.projetsData[project].phase = this.prismicProject[project].phase
+      this.projetsData[project].lieu = this.prismicProject[project].lieu
+      this.projetsData[project].domaine = this.prismicProject[project].domaine
+      this.projetsData[project].credit = this.prismicProject[
+        project
+      ].credit_photo
+      this.projetsData[project].cover = this.prismicProject[project].cover.url
+      // this.projetsData[project].bandeau = this.prismicProject[
+      //   project
+      // ].bandeau.url
+      // this.projetsData[project].photos = this.prismicProject[
+      //   project
+      // ].body[0].items
+    }
+    console.log(this.projetsData)
   },
 
   mounted() {
+    // console.log('projet data : ' + this.projetsData)
     window.scrollTo(0, 0)
     gsap.registerPlugin(ScrollTrigger)
     gsap.from('.photo', { y: 100, opacity: 0, duration: 0.7, stagger: 0.1 })

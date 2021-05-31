@@ -218,4 +218,19 @@ textarea {
 .button1:focus {
   font-weight: normal;
 }
+
+@media (max-width: 1000px) {
+  .img-form {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .grid-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid_element {
+    margin-bottom: 10px;
+  }
+}
 </style>

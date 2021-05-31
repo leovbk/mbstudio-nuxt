@@ -94,4 +94,12 @@ export default {
 .link_credits {
   color: white;
 }
+
+@media (max-width: 500px) {
+  .linkreseaux {
+    flex-direction: column;
+    transform: translate(50%, 0);
+    height: 250px;
+  }
+}
 </style>

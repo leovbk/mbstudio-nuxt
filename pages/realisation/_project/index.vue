@@ -3,12 +3,13 @@
     <div class="masqueImg"></div>
     <img
       id="photo_couverture"
-      :src="`${require(`@/assets/images/projets/bandeau/${project.bandeau}`)}`"
       alt="photo de couverture"
-      :style="{
-        objectPosition: `0 ${project.bdPosition}%`,
-      }"
+      :src="`${project.bandeau}`"
     />
+
+    <!-- :style="{
+        objectPosition: `0 ${project.bdPosition}%`,
+      }" -->
 
     <!-- <PrismicRichText id="presentation_projet" :field="data.projet_content" /> -->
     <div id="presentation_projet">
@@ -50,7 +51,7 @@
           class="photoGrid"
           :class="`photoGrid${i + 1}`"
           :style="{
-            backgroundImage: `url(${require(`@/assets/images/projets/${projectId}/${photop}`)})`,
+            backgroundImage: `url(${project.photos[i].photos.url})`,
           }"
         >
         </nuxt-link>
@@ -60,10 +61,10 @@
 </template>
 
 <script>
-import projetsData from '@/assets/projets-data'
 import SplitType from 'split-type'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+// import projetsData from './../../../assets/projets-data'
 
 export default {
   beforeRouteLeave(to, from, next) {
@@ -95,10 +96,25 @@ export default {
     tlProjetOut.call(next)
   },
 
+  async asyncData({ $prismic, error }) {
+    const document = await $prismic.api.query(
+      $prismic.predicates.at('document.type', 'projet')
+    )
+
+    const prismicProject = []
+    console.log(document.results.length)
+    for (let i = 0; i < document.results.length; i++) {
+      prismicProject.push(document.results[i].data)
+    }
+    console.log(prismicProject)
+    return { prismicProject }
+  },
+
   data() {
     return {
-      projetsData,
+      projetsData: [],
       projectIndex: '',
+      // project: this.prismicProject[0],
     }
   },
   computed: {
@@ -106,7 +122,7 @@ export default {
       return this.$route.params.project
     },
     project() {
-      return projetsData.find((project) => project.id === this.projectId)
+      return this.projetsData.find((project) => project.id === this.projectId)
     },
     photosGrid() {
       return this.project.photos
@@ -328,17 +344,41 @@ export default {
     },
   },
   created() {
-    // récupération de l'index du projet
-    // for (let i = 0; i < this.projetsData.length; i++) {
-    //   if (this.projetsData[i].id === this.$route.params.project) {
-    //     this.projectIndex = i
-    //   }
-    // }
-    // récupérer le name
-    // this.projectId = this.projetsData[this.projectIndex].id
+    // map projet data
+
+    for (const project in this.prismicProject) {
+      this.projetsData[project] = {
+        name: '',
+        id: '',
+        title: '',
+        phase: '',
+        lieu: '',
+        domaine: '',
+        credit: '',
+        bandeau: '',
+        photos: [],
+      }
+      this.projetsData[project].name = this.prismicProject[project].name
+      this.projetsData[project].id = this.prismicProject[project].url
+      this.projetsData[project].title = this.prismicProject[project].title
+      this.projetsData[project].phase = this.prismicProject[project].phase
+      this.projetsData[project].lieu = this.prismicProject[project].lieu
+      this.projetsData[project].domaine = this.prismicProject[project].domaine
+      this.projetsData[project].credit = this.prismicProject[
+        project
+      ].credit_photo
+      this.projetsData[project].cover = this.prismicProject[project].cover.url
+      this.projetsData[project].bandeau = this.prismicProject[
+        project
+      ].bandeau.url
+      this.projetsData[project].photos = this.prismicProject[
+        project
+      ].body[0].items
+    }
   },
 
   mounted() {
+    console.log(this.photosGrid)
     window.scrollTo(0, 0)
     gsap.registerPlugin(ScrollTrigger)
 
@@ -350,11 +390,6 @@ export default {
 
     const tlProjetIn = gsap.timeline()
 
-    tlProjetIn.to('.masqueImg', {
-      y: '100%',
-      // opacity: 0,
-      duration: 1.2,
-    })
     // tlProjetIn.from('.char', {
     //   opacity: 0,
     //   stagger: 0.02,
@@ -366,6 +401,11 @@ export default {
       stagger: 0.2,
       duration: 0.7,
       delay: -0.5,
+    })
+    tlProjetIn.to('.masqueImg', {
+      y: '100%',
+      // opacity: 0,
+      duration: 1.2,
     })
     tlProjetIn.from(['.textDescription', '#credit'], {
       opacity: 0,
@@ -540,5 +580,32 @@ export default {
 
 .photoGrid20 {
   grid-area: t;
+}
+
+@media (max-width: 1000px) {
+  #presentation_projet {
+    margin: 40px 40px;
+  }
+  .gridContainer {
+    margin: 0 40px 20px;
+  }
+  .photoGrid {
+    min-width: 150px;
+    min-height: 250px;
+  }
+  #photo_couverture {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gridProjet {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+  }
+  #photo_couverture {
+    height: 200px;
+  }
 }
 </style>

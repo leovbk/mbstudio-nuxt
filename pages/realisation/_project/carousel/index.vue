@@ -17,7 +17,7 @@
       class="panel"
       :class="`photo${i + 1}`"
       :style="{
-        backgroundImage: `url(${require(`@/assets/images/projets/${projectId}/${image}`)})`,
+        backgroundImage: `url(${project.photos[i].photos.url})`,
       }"
     ></section>
     <div class="flex flex-center">
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import projetsData from '@/assets/projets-data'
+// import projetsData from '@/assets/projets-data'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.min'
 
@@ -53,20 +53,34 @@ export default {
     next()
   },
   layout: 'carousel',
+  async asyncData({ $prismic, error }) {
+    const document = await $prismic.api.query(
+      $prismic.predicates.at('document.type', 'projet')
+    )
+
+    const prismicProject = []
+
+    for (let i = 0; i < document.results.length; i++) {
+      prismicProject.push(document.results[i].data)
+    }
+
+    return { prismicProject }
+  },
   data() {
     return {
-      projetsData,
+      projetsData: [],
       hasArrowVisible: true,
       projectIndex: '',
       photoHeight: '',
     }
   },
+
   computed: {
     projectId() {
       return this.$route.params.project
     },
     project() {
-      return projetsData.find((project) => project.id === this.projectId)
+      return this.projetsData.find((project) => project.id === this.projectId)
     },
     projectImages() {
       return this.project.photos
@@ -75,6 +89,40 @@ export default {
       return this.$route.query.photo
     },
   },
+  created() {
+    // map projet data
+
+    for (const project in this.prismicProject) {
+      this.projetsData[project] = {
+        name: '',
+        id: '',
+        title: '',
+        phase: '',
+        lieu: '',
+        domaine: '',
+        credit: '',
+        bandeau: '',
+        photos: [],
+      }
+      this.projetsData[project].name = this.prismicProject[project].name
+      this.projetsData[project].id = this.prismicProject[project].url
+      this.projetsData[project].title = this.prismicProject[project].title
+      this.projetsData[project].phase = this.prismicProject[project].phase
+      this.projetsData[project].lieu = this.prismicProject[project].lieu
+      this.projetsData[project].domaine = this.prismicProject[project].domaine
+      this.projetsData[project].credit = this.prismicProject[
+        project
+      ].credit_photo
+      this.projetsData[project].cover = this.prismicProject[project].cover.url
+      this.projetsData[project].bandeau = this.prismicProject[
+        project
+      ].bandeau.url
+      this.projetsData[project].photos = this.prismicProject[
+        project
+      ].body[0].items
+    }
+  },
+
   mounted() {
     gsap.registerPlugin(ScrollTrigger)
     // trigger
@@ -111,23 +159,11 @@ export default {
 
     document.addEventListener('scroll', this.scrollHandler)
 
-    // go to current photo
-    console.log(innerHeight * this.currentPhoto)
-    setTimeout(function () {
-      window.scrollTo(0, innerHeight * this.currentPhoto)
-    }, 2000)
+    window.scrollTo(0, innerHeight * this.currentPhoto)
   },
 
-  // photo size
-
   methods: {
-    log() {
-      const page = document.querySelector('#carousel_container')
-      console.log(page.scrollTop)
-    },
-
     scrollHandler() {
-      // var scrollD = document.querySelector('#scrollDown')
       if (
         window.scrollY > innerHeight * this.currentPhoto + 150 ||
         window.scrollY < innerHeight * this.currentPhoto - 150
@@ -141,11 +177,6 @@ export default {
         Alltrigger[i].kill(true)
       }
     },
-    // scrollDownAnim: function() {
-    //   let tlScrollAnim = new gsap.timeline()
-    //   tlScrollAnim.to('#scrollDown', { opacity: 1, duration: 1 })
-    //   tlScrollAnim.to('#scrollDown', { opacity: 0, duration: 1 })
-    // }
   },
 }
 </script>
@@ -206,5 +237,48 @@ section:not(.first) {
 .fade-leave-to {
   transform: scale(0);
   z-index: 998;
+}
+@media (max-width: 1300px) {
+  .panel {
+    width: calc(100% - 500px);
+    height: calc(100% - 80px);
+    margin: 40px 250px;
+  }
+}
+@media (max-width: 1000px) {
+  .panel {
+    width: calc(100% - 350px);
+    height: calc(100% - 60px);
+    margin: 30px 175px;
+  }
+}
+@media (max-width: 800px) {
+  .panel {
+    width: calc(100% - 250px);
+    height: calc(100% - 40px);
+    margin: 20px 125px;
+  }
+  #carousel_escape {
+    width: 10%;
+    height: 16%;
+  }
+}
+@media (max-width: 600px) {
+  .panel {
+    width: calc(100% - 150px);
+    height: calc(100% - 20px);
+    margin: 10px 75px;
+  }
+}
+@media (max-width: 450px) {
+  .panel {
+    width: calc(100% - 100px);
+    height: calc(100% - 10px);
+    margin: 5px 50px;
+  }
+  #carousel_escape {
+    width: 15%;
+    height: 25%;
+  }
 }
 </style>

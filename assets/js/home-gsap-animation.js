@@ -66,39 +66,42 @@ export const homeGsapAnimation = () => {
       duration: 0,
     })
   }
-
-  // MB mouvement
-  gsap.fromTo(
-    '.mb',
-    { scale: '1' },
-    {
-      top: '105vh',
-      left: '450px',
-      scale: '0.7',
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: '.bg1',
-        // markers: true,
-        scrub: true,
-        start: 'top top',
-      },
-    }
-  )
-  // Studio mouvement
-  gsap.fromTo(
-    '.studio',
-    { scale: '1' },
-    {
-      top: '120vh',
-      left: '300px',
-      scale: '0.7',
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: '.bg1',
-        // markers: true,
-        scrub: true,
-        start: 'top top',
-      },
-    }
-  )
+  ScrollTrigger.matchMedia({
+    '(min-width: 1000px)': () => {
+      // MB mouvement
+      gsap.fromTo(
+        '.mb',
+        { scale: '1' },
+        {
+          top: '115vh',
+          left: '12%',
+          scale: '0.8',
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: '.bg1',
+            // markers: true,
+            scrub: true,
+            start: 'top top',
+          },
+        }
+      )
+      // Studio mouvement
+      gsap.fromTo(
+        '.studio',
+        { scale: '1' },
+        {
+          top: '140vh',
+          left: '9%',
+          scale: '0.8',
+          ease: 'power2.inOut',
+          scrollTrigger: {
+            trigger: '.bg1',
+            // markers: true,
+            scrub: true,
+            start: 'top top',
+          },
+        }
+      )
+    },
+  })
 }

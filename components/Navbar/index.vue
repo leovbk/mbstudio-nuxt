@@ -137,4 +137,10 @@ export default {
   background-color: #2f2e2e;
   transform-origin: top left;
 }
+
+@media (max-width: 600px) {
+  #logo {
+    display: none;
+  }
+}
 </style>
