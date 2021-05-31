@@ -125,7 +125,7 @@ export default {
   flex: 0 0 auto;
   z-index: 20;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   margin: 0;
 }
@@ -141,6 +141,12 @@ export default {
 @media (max-width: 600px) {
   #logo {
     display: none;
+  }
+
+  .nav_container {
+    padding: 0;
+    width: 100vw;
+    margin: 0;
   }
 }
 </style>
