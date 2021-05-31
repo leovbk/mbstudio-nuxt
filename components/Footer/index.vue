@@ -61,7 +61,10 @@ export default {
   background-color: #2f2e2e;
   bottom: 0;
   min-height: 350px;
-  width: 100%;
+  padding: 0 20px;
+
+  /* width: 100%; */
+  overflow-x: hidden;
 }
 
 .coord {
@@ -73,8 +76,10 @@ export default {
 .linkreseaux {
   display: flex;
   justify-content: space-between;
-  width: 180px;
+  width: 40px;
   height: fit-content;
+
+  /* overflow: hidden; */
 }
 
 .footer div {
@@ -98,7 +103,6 @@ export default {
 @media (max-width: 500px) {
   .linkreseaux {
     flex-direction: column;
-    transform: translate(50%, 0);
     height: 250px;
   }
 }

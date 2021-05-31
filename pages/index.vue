@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style>
+.home {
+  overflow-x: hidden;
+}
 .portrait {
   position: relative;
   top: 150px;
