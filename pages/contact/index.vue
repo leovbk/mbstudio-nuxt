@@ -4,7 +4,20 @@
     <div id="form_container">
       <!-- <div class="spacer-form"></div> -->
 
-      <form id="contact-form">
+      <form
+        id="contact-form"
+        target="_blank"
+        action="https://formsubmit.co/leo.verbeke@hotmail.fr"
+        method="POST"
+      >
+        <input type="hidden" name="_next" value="http://localhost:3000/" />
+        <input
+          type="hidden"
+          name="_subject"
+          value="Salut Gomar, c'est le site qui te parles, tu as un nouveau message"
+        />
+        <input type="hidden" name="_ captcha" value="false" />
+        <input type="hidden" name="_template" value="box" />
         <div class="grid-wrapper">
           <div class="grid_element">
             <label class="etiquette" for="firstname">Prénom</label>

@@ -122,7 +122,7 @@ export default {
       ].body[0].items
     }
   },
-
+  beforeMount() {},
   mounted() {
     gsap.registerPlugin(ScrollTrigger)
     // trigger
@@ -159,7 +159,9 @@ export default {
 
     document.addEventListener('scroll', this.scrollHandler)
 
+    console.log('mout')
     window.scrollTo(0, innerHeight * this.currentPhoto)
+    console.log('moutmoutmout')
   },
 
   methods: {

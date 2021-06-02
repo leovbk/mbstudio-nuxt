@@ -40,9 +40,6 @@ export default {
     },
     immediate: true,
   },
-  // beforeRouteLeave(to, from, next) {
-  //   console.log('to, from, next', to, from, next)
-  // },
   mounted() {
     if (this.$route.name === 'index') {
       this.navAnim()
@@ -83,6 +80,8 @@ export default {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+
+  /* position: fixed; */
 }
 
 .barMenu .nav_container {
@@ -125,7 +124,7 @@ export default {
   flex: 0 0 auto;
   z-index: 20;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
   margin: 0;
   overflow-x: hidden;
