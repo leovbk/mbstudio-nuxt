@@ -10,7 +10,11 @@
         action="https://formsubmit.co/leo.verbeke@hotmail.fr"
         method="POST"
       >
-        <input type="hidden" name="_next" value="http://localhost:3000/" />
+        <input
+          type="hidden"
+          name="_next"
+          value="http://localhost:3000/contact/success"
+        />
         <input
           type="hidden"
           name="_subject"
