@@ -13,7 +13,7 @@
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:3000/contact/success"
+          value="http://leovbk.github.io/mbstudio-nuxt/contact/success"
         />
         <input
           type="hidden"
