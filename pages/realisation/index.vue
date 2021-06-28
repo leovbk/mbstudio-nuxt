@@ -1,7 +1,7 @@
 <template>
   <div class="moisaicContainer">
     <div class="projetMosaic">
-      <div v-for="({ cover, name, id }, i) in projetsData" :key="i">
+      <div v-for="({ cover, name, id, sousTitre }, i) in projetsData" :key="i">
         <nuxt-link
           :to="{
             name: 'realisation-project',
@@ -16,7 +16,10 @@
             }"
           >
             <div class="photoLayer">
-              <p class="titreProjet">{{ name }}</p>
+              <p class="titreProjet">
+                {{ name }}
+              </p>
+              <p id="sousTitre">{{ sousTitre }}</p>
             </div>
           </div>
         </nuxt-link>
@@ -57,6 +60,7 @@ export default {
     for (const project in this.prismicProject) {
       this.projetsData[project] = {
         name: '',
+        sousTitre: '',
         id: '',
         title: '',
         phase: '',
@@ -67,6 +71,9 @@ export default {
         photos: [],
       }
       this.projetsData[project].name = this.prismicProject[project].name
+      this.projetsData[project].sousTitre = this.prismicProject[
+        project
+      ].soustitre
       this.projetsData[project].id = this.prismicProject[project].url
       this.projetsData[project].title = this.prismicProject[project].title
       this.projetsData[project].phase = this.prismicProject[project].phase
@@ -147,6 +154,7 @@ export default {
   height: 100%;
   transition-duration: 0.4s;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
@@ -168,5 +176,11 @@ export default {
 .titreProjet:hover {
   opacity: 1;
   transition-duration: 0.4s;
+}
+
+#sousTitre {
+  position: absolute;
+  top: 60%;
+  color: white;
 }
 </style>

@@ -40,7 +40,13 @@
           </div>
           <div class="grid_element">
             <label class="etiquette" for="email">Email</label>
-            <input id="email" type="text" name="email" class="input_form" />
+            <input
+              id="email"
+              type="text"
+              name="email"
+              class="input_form"
+              required
+            />
             <p class="comments"></p>
           </div>
           <div class="grid_element">
@@ -52,7 +58,12 @@
 
         <div class="msgSection">
           <label class="etiquette" for="message">Message</label>
-          <textarea id="message" name="message" class="input_form"></textarea>
+          <textarea
+            id="message"
+            name="message"
+            class="input_form"
+            required
+          ></textarea>
           <p class="comments"></p>
         </div>
         <div class="div_btn">

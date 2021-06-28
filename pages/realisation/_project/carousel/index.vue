@@ -208,8 +208,8 @@ section:not(.first) {
 
 #carousel_escape {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 2%;
+  right: 2%;
   width: 6%;
   height: 10%;
   z-index: 300;
@@ -247,7 +247,7 @@ section:not(.first) {
     margin: 40px 250px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .panel {
     width: calc(100% - 350px);
     height: calc(100% - 60px);

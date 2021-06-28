@@ -9,7 +9,7 @@
         <nuxt-link :to="{ name: 'index' }">Accueil</nuxt-link>
       </div>
       <div class="btn_nav">
-        <nuxt-link :to="{ name: 'realisation' }">Realisation</nuxt-link>
+        <nuxt-link :to="{ name: 'realisation' }">Réalisations</nuxt-link>
       </div>
 
       <div class="btn_nav">
@@ -80,6 +80,7 @@ export default {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+  overflow-x: hidden;
 
   /* position: fixed; */
 }

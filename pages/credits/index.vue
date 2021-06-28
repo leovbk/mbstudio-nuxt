@@ -5,9 +5,9 @@
     <br />
     <h2 id="editeur">Editeur</h2>
     <p>
-      Ce site internet est édité par Margaux Bonfils. <br />
+      Ce site internet est édité par Léo VERBEKE. <br />
       <br />
-      Cabinet d'architecture - Mb studio <br />
+      Pour le cabinet d'architecture - Mb studio <br />
       Margaux Bonfils<br />
       49 rue de l'Arquebuse <br />08000 Charleville-Mézières<br />
       <br />
@@ -16,13 +16,13 @@
     </p>
     <br />
     <h2 id="hebergement">Hébergement</h2>
-    <p>wix.com</p>
+    <p>A DEFINIR</p>
     <br />
     <h2 id="copyright">Droit d'auteur - Copyright</h2>
     <p>
-      Ce site internet est édité par Margaux Bonfils. <br />
+      Ce site internet est édité par Léo VERBEKE. <br />
       <br />
-      Cabinet d'architecture - Mb studio <br />
+      Pour le cabinet d'architecture - Mb studio <br />
       Margaux Bonfils<br />
       49 rue de l'Arquebuse <br />08000 Charleville-Mézières<br />
       <br />

@@ -60,7 +60,7 @@ export default {
   justify-content: space-around;
   background-color: #2f2e2e;
   bottom: 0;
-  min-height: 350px;
+  min-height: 300px;
   padding: 0 20px;
 
   /* width: 100%; */
@@ -78,12 +78,17 @@ export default {
   justify-content: space-between;
   width: 40px;
   height: fit-content;
+  margin-right: 5%;
 
   /* overflow: hidden; */
 }
 
+.linkreseaux a {
+  margin-left: 10px;
+}
+
 .footer div {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .linkreseaux img {
@@ -100,7 +105,7 @@ export default {
   color: white;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .linkreseaux {
     flex-direction: column;
     height: 250px;

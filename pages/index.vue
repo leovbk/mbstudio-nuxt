@@ -41,12 +41,14 @@ export default {
 }
 .portrait {
   position: relative;
-  top: 150px;
-  left: 48%;
+  top: 210px;
+  left: 8%;
   width: 500px;
   height: fit-content;
-  color: white;
-  font-size: xx-large;
+  color: black;
+  font-size: 28px;
+
+  /* text-shadow: 0 0 5px black; */
 }
 
 .line {
@@ -62,7 +64,7 @@ export default {
 .bg2 {
   width: 100%;
   height: 100vh;
-  background-image: url('@/assets/images/Home/MBHome1700px01.jpg');
+  background-image: url('@/assets/images/Home/MBHOME-BG2RESIZE.jpg');
   background-size: cover;
 }
 
@@ -70,21 +72,21 @@ export default {
   font-weight: 300;
   color: white;
   font-family: Abuget, sans-serif;
-  font-size: 330px;
+  font-size: 230px;
   z-index: 1;
 }
 
 .mb {
   position: absolute;
-  bottom: -10vh;
+  bottom: 1vh;
   left: 12%;
   scale: 1;
 }
 
 .studio {
   position: absolute;
-  bottom: -10vh;
-  left: 34%;
+  bottom: 1vh;
+  left: calc(22% + 0.2em);
   scale: 1;
 }
 
@@ -127,16 +129,16 @@ export default {
   filter: blur(50px);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .mb {
-    top: 30vh;
+    top: 55vh;
   }
   .studio {
     left: 12%;
-    top: 55vh;
+    top: 70vh;
   }
   .bg1 p {
-    font-size: 300px;
+    font-size: 230px;
   }
 
   .bg1 {
@@ -150,13 +152,13 @@ export default {
 
 @media (max-width: 600px) {
   .bg1 p {
-    font-size: 250px;
+    font-size: 180px;
   }
   .mb {
-    top: 40vh;
+    top: 57vh;
   }
   .studio {
-    top: 60vh;
+    top: 70vh;
   }
   .portrait {
     font-size: 25px;

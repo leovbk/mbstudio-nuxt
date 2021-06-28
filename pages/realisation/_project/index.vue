@@ -6,35 +6,31 @@
       alt="photo de couverture"
       :src="`${project.bandeau}`"
     />
-
-    <!-- :style="{
-        objectPosition: `0 ${project.bdPosition}%`,
-      }" -->
-
-    <!-- <PrismicRichText id="presentation_projet" :field="data.projet_content" /> -->
     <div id="presentation_projet">
       <h1 class="titre_projet">
-        {{ project.title }}
+        <!-- {{ project.title }} -->
       </h1>
-
       <div class="elementDescription">
-        <h2 class="titreDescription">Phase</h2>
+        <h2 class="titreDescription">Domaine d'intervention</h2>
         <p class="textDescription">
-          {{ project.phase }}
+          {{ project.domaine }}
         </p>
       </div>
-
       <div class="elementDescription">
         <h2 class="titreDescription">Lieu</h2>
         <p class="textDescription">
           {{ project.lieu }}
         </p>
       </div>
+      <div class="elementDescription">
+        <h2 class="titreDescription">Surface</h2>
+        <p class="textDescription">{{ project.surface }}</p>
+      </div>
 
       <div class="elementDescription">
-        <h2 class="titreDescription">Domaine d'intervention</h2>
+        <h2 class="titreDescription">Phase</h2>
         <p class="textDescription">
-          {{ project.domaine }}
+          {{ project.phase }}
         </p>
       </div>
     </div>
@@ -61,7 +57,7 @@
 </template>
 
 <script>
-import SplitType from 'split-type'
+// import SplitType from 'split-type'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 // import projetsData from './../../../assets/projets-data'
@@ -354,6 +350,7 @@ export default {
         phase: '',
         lieu: '',
         domaine: '',
+        surface: '',
         credit: '',
         bandeau: '',
         photos: [],
@@ -364,6 +361,7 @@ export default {
       this.projetsData[project].phase = this.prismicProject[project].phase
       this.projetsData[project].lieu = this.prismicProject[project].lieu
       this.projetsData[project].domaine = this.prismicProject[project].domaine
+      this.projetsData[project].surface = this.prismicProject[project].surface
       this.projetsData[project].credit = this.prismicProject[
         project
       ].credit_photo
@@ -382,9 +380,37 @@ export default {
     window.scrollTo(0, 0)
     gsap.registerPlugin(ScrollTrigger)
 
-    const splitTitle = new SplitType('.titre_projet', { types: 'chars' })
-    splitTitle.chars[0].style.fontSize = '2.8em'
-    splitTitle.chars[0].style.fontWeight = 'lighter'
+    // Split 1er lettre titre et injecter titreProjet
+
+    const laString = this.project.title
+
+    const titreProjet = document.querySelector('.titre_projet')
+
+    titreProjet.style.display = 'flex'
+    titreProjet.style.alignItems = 'baseline'
+
+    const divFirst = document.createElement('p')
+    const divSuite = document.createElement('p')
+
+    titreProjet.appendChild(divFirst)
+    titreProjet.appendChild(divSuite)
+
+    const firstLetter = laString.split('')[0]
+    const suiteLetterArray = laString
+      .split('')
+      .splice(1, laString.length)
+      .join('')
+
+    divFirst.innerHTML = firstLetter
+    divSuite.innerHTML = suiteLetterArray
+    divFirst.classList.add('firstLetter')
+
+    divFirst.style.fontSize = '2em'
+    divFirst.style.fontWeight = 'lighter'
+
+    // const splitTitle = new SplitType('.titre_projet', { types: 'chars' })
+    // splitTitle.chars[0].style.fontSize = '2.8em'
+    // splitTitle.chars[0].style.fontWeight = 'lighter'
 
     // timeline intro
 
@@ -455,10 +481,11 @@ export default {
 }
 
 #presentation_projet h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: 400;
   margin-left: -0.3em;
   z-index: 3;
+  line-height: 1.5;
 }
 
 .elementDescription {
@@ -582,7 +609,7 @@ export default {
   grid-area: t;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   #presentation_projet {
     margin: 40px 40px;
   }
@@ -606,6 +633,14 @@ export default {
   }
   #photo_couverture {
     height: 200px;
+  }
+
+  #presentation_projet h1 {
+    font-size: 1.8em;
+  }
+
+  .firstLetter {
+    font-size: 2.1em;
   }
 }
 </style>
