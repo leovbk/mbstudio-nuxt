@@ -6,11 +6,13 @@
         name: 'realisation-project',
         params: { project: `${project.id}` },
       }"
-      ><img
+    >
+      <img
         id="img_escape"
         :src="require('@/assets/logo/escape.svg')"
         @click="killScrollAnim"
-    /></nuxt-link>
+      />
+    </nuxt-link>
     <section
       v-for="(image, i) in projectImages"
       :key="i"
@@ -160,7 +162,12 @@ export default {
     document.addEventListener('scroll', this.scrollHandler)
 
     console.log('mout')
-    window.scrollTo(0, innerHeight * this.currentPhoto)
+    console.log('currentPhoto', this.currentPhoto)
+
+    setTimeout(() => {
+      window.scrollTo(0, innerHeight * this.currentPhoto)
+    }, 0)
+
     console.log('moutmoutmout')
   },
 

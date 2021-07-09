@@ -122,7 +122,6 @@ export default {
 }
 
 .barMenu {
-  flex: 0 0 auto;
   z-index: 20;
   position: fixed;
   width: 100%;
@@ -133,7 +132,7 @@ export default {
 
 .navLayer {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   background-color: #2f2e2e;
   transform-origin: top left;
