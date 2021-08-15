@@ -108,6 +108,7 @@ export default {
 @media (max-width: 1000px) {
   .linkreseaux {
     flex-direction: column;
+    justify-content: space-evenly;
     height: 250px;
   }
 }
