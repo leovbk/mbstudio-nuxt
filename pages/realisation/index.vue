@@ -19,7 +19,7 @@
               <p class="titreProjet">
                 {{ name }}
               </p>
-              <p id="sousTitre">{{ sousTitre }}</p>
+              <p class="sousTitre">{{ sousTitre }}</p>
             </div>
           </div>
         </nuxt-link>
@@ -178,9 +178,11 @@ export default {
   transition-duration: 0.4s;
 }
 
-#sousTitre {
+.sousTitre {
   position: absolute;
   top: 60%;
   color: white;
+  z-index: 0;
+  pointer-events: none;
 }
 </style>
