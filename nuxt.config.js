@@ -2,7 +2,7 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES' ? '/mbstudio-nuxt/' : '/'
 
 export default {
-  target: 'static',
+  target: 'server',
   server: {
     host: '0.0.0.0',
   },
