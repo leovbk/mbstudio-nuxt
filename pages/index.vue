@@ -161,8 +161,8 @@ export default {
     transform: translate(-50%, -50%);
     width: 400px;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
   }
 }
 
