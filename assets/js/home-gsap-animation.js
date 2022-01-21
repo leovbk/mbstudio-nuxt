@@ -14,6 +14,7 @@ export const homeGsapAnimation = () => {
     const tl = gsap.timeline({
       scrollTrigger: { trigger: '.portrait', start: 'top center' },
     })
+    tl.from('.portrait', { opacity: '0' })
     tl.staggerFrom(
       portraitLines,
       1,
