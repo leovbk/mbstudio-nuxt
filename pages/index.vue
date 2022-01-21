@@ -41,12 +41,12 @@ export default {
 }
 .portrait {
   position: relative;
-  top: 210px;
-  left: 8%;
-  width: 500px;
+  top: 220px;
+  left: 16%;
+  width: 350px;
   height: fit-content;
   color: black;
-  font-size: 28px;
+  font-size: 24px;
 
   /* text-shadow: 0 0 5px black; */
 }
@@ -129,6 +129,14 @@ export default {
   filter: blur(50px);
 }
 
+@media (max-width: 1300px) {
+  .portrait {
+    top: 180px;
+    font-size: 20px;
+    width: 300px;
+  }
+}
+
 @media (max-width: 1050px) {
   .mb {
     top: 55vh;
@@ -145,8 +153,16 @@ export default {
     background-position: center;
   }
   .portrait {
+    text-align: center;
+    padding: 40px;
     left: 50%;
-    transform: translate(-50%, 0%);
+    font-size: 25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
   }
 }
 
@@ -159,13 +175,6 @@ export default {
   }
   .studio {
     top: 70vh;
-  }
-  .portrait {
-    font-size: 25px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    overflow: hidden;
   }
 }
 </style>

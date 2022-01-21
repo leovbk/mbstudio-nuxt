@@ -2,11 +2,11 @@
   <div id="CGV_container">
     <p>
       Les présentes conditions générales de vente sont conclues entre d'une
-      part, l'entreprise Margaux Bonfils -Architecte d'intérieur, 49 rue de
-      l'Arquebuse 08000 Charleville-Mézières - N° SIRET : 82756540900022,
-      ci-après dénommé « Margaux Bonfils » , et d'autre part, les personnes
-      souhaitant faire appel aux prestations de services dénommée ci-après « le
-      client ».<br />
+      part, l'entreprise Margaux Bonfils -Architecte d'intérieur, 25 rue du
+      Moulin 08000 Charleville-Mézières - N° SIRET : 82756540900048, ci-après
+      dénommé « Margaux Bonfils » , et d'autre part, les personnes souhaitant
+      faire appel aux prestations de services dénommée ci-après « le client
+      ».<br />
       Tout client, particulier ou professionnel, de Margaux Bonfils, reconnait
       avoir pris connaissance des conditions générales de prestations de
       services avant d'avoir accepté un devis. Toute acceptation et signature
@@ -190,7 +190,7 @@
       ce faire, vous devez faire parvenir dans ce délai (cachet de la poste
       faisant foi) une lettre recommandée avec accusé de réception, indiquant
       votre intention de vous rétracter, à l’adresse suivante : <br />
-      Margaux Bonfils, 49 rue de l'Arquebuse 08000 Charleville-Mézières. <br />
+      Margaux Bonfils, 25 rue du Moulin 08000 Charleville-Mézières. <br />
       Le remboursement du montant versé à la commande sera effectué au plus tard
       dans les trente jours suivant la réception de la lettre.
     </p>

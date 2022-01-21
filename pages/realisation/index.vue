@@ -180,6 +180,7 @@ export default {
 
 .sousTitre {
   position: absolute;
+  font-size: 12px;
   top: 60%;
   color: white;
   z-index: 0;

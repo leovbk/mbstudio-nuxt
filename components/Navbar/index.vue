@@ -30,11 +30,11 @@ export default {
     '$route.name'(routeName) {
       if (routeName === 'index') {
         // run anim
-        console.log('watch run anim')
+
         this.navAnim()
       } else {
         // kill anim
-        console.log('watch kill anim')
+
         this.killNavAnim()
       }
     },
@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     navAnim() {
-      console.log('navAnim')
       gsap.from('.navLayer', {
         y: -100,
         transform: 'rotate(-45deg)',

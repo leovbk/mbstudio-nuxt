@@ -9,14 +9,14 @@
       <br />
       Pour le cabinet d'architecture - Mb studio <br />
       Margaux Bonfils<br />
-      49 rue de l'Arquebuse <br />08000 Charleville-Mézières<br />
+      25 rue du Moulin <br />08000 Charleville-Mézières<br />
       <br />
-      SIRET : 82756540900022<br />
+      SIRET : 82756540900048<br />
       Code APE : 7111Z
     </p>
     <br />
     <h2 id="hebergement">Hébergement</h2>
-    <p>A DEFINIR</p>
+    <p>GITHUB</p>
     <br />
     <h2 id="copyright">Droit d'auteur - Copyright</h2>
     <p>
@@ -24,9 +24,9 @@
       <br />
       Pour le cabinet d'architecture - Mb studio <br />
       Margaux Bonfils<br />
-      49 rue de l'Arquebuse <br />08000 Charleville-Mézières<br />
+      25 rue du Moulin <br />08000 Charleville-Mézières<br />
       <br />
-      SIRET : 82756540900022<br />
+      SIRET : 82756540900048<br />
       Code APE : 7111Z
     </p>
   </div>

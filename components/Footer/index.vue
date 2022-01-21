@@ -12,7 +12,7 @@
       <p>06 09 86 23 95</p>
       <p>contact.mbstudio@gmail.com</p>
       <br />
-      <p>© 2020 Margaux Bonfils, Architecte d'intérieur et Scénographe</p>
+      <p>© 2022 Margaux Bonfils, Architecte d'intérieur et Scénographe</p>
       <p>
         <nuxt-link class="link_credits" :to="{ name: 'credits' }"
           >Mentions légales</nuxt-link
