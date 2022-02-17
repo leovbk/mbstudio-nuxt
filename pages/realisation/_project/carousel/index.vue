@@ -217,20 +217,20 @@ section:not(.first) {
   position: fixed;
   top: 2%;
   right: 2%;
-  width: 6%;
-  height: 10%;
+  width: 40px;
+  height: auto;
   z-index: 300;
 }
 
 #scrollDown {
   position: fixed;
-  width: 6vw;
+  width: 4vw;
   bottom: 0;
 }
 
 #scrollUp {
   position: fixed;
-  width: 6vw;
+  width: 4vw;
   top: 0;
   transform: rotate(180deg);
 }
@@ -267,10 +267,6 @@ section:not(.first) {
     height: calc(100% - 40px);
     margin: 20px 125px;
   }
-  #carousel_escape {
-    width: 10%;
-    height: 16%;
-  }
 }
 @media (max-width: 600px) {
   .panel {
@@ -284,10 +280,6 @@ section:not(.first) {
     width: calc(100% - 100px);
     height: calc(100% - 10px);
     margin: 5px 50px;
-  }
-  #carousel_escape {
-    width: 15%;
-    height: 25%;
   }
 }
 </style>

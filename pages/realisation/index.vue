@@ -90,7 +90,6 @@ export default {
       //   project
       // ].body[0].items
     }
-    console.log(this.projetsData)
   },
 
   mounted() {
@@ -98,6 +97,15 @@ export default {
     window.scrollTo(0, 0)
     gsap.registerPlugin(ScrollTrigger)
     gsap.from('.photo', { y: 100, opacity: 0, duration: 0.7, stagger: 0.1 })
+
+    // const photoEvent = document.querySelectorAll('.photo')
+    // const titreProjetEvent = document.querySelectorAll('.titreProjet')
+    // for (let i = 0; i < photoEvent.lenght; i++) {
+    //   photoEvent[i].addEventListener(
+    //     'mouseover',
+    //     titreProjetEvent[i].classList.toggle('opacityClass')
+    //   )
+    // }
   },
 }
 </script>
@@ -115,7 +123,6 @@ export default {
   margin-right: 120px;
   margin-top: 140px;
   margin-bottom: 140px;
-  line-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,6 +160,7 @@ export default {
   width: 100%;
   height: 100%;
   transition-duration: 0.4s;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,28 +170,47 @@ export default {
 .photoLayer:hover {
   opacity: 1;
 }
-.titreProjet {
+
+/* .titreProjet {
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  line-height: 0.7;
   width: 100%;
   height: 100%;
   font-size: x-large;
   opacity: 0;
-}
+} */
 
-.titreProjet:hover {
-  opacity: 1;
-  transition-duration: 0.4s;
-}
-
-.sousTitre {
+/* .sousTitre {
   position: absolute;
   font-size: 12px;
   top: 60%;
   color: white;
   z-index: 0;
   pointer-events: none;
+} */
+
+.titreProjet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  font-size: x-large;
+  line-height: 1.1;
+  transition-duration: 0.4s;
 }
+
+.sousTitre {
+  font-size: 12px;
+  color: white;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* .opacityClass {
+  opacity: 1;
+} */
 </style>

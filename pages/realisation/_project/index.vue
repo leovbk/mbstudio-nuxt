@@ -466,7 +466,7 @@ export default {
 #photo_couverture {
   margin-top: 80px;
   width: 100vw;
-  height: 350px;
+  height: 25vw;
   object-fit: cover;
   z-index: -1;
 
@@ -494,7 +494,7 @@ export default {
 }
 
 .titreDescription {
-  margin: 2em 0 0.4em;
+  margin: 2em 0 0.1em;
   font-weight: 600;
   z-index: 3;
 }
@@ -620,9 +620,10 @@ export default {
     min-width: 150px;
     min-height: 250px;
   }
-  #photo_couverture {
+
+  /* #photo_couverture {
     height: 250px;
-  }
+  } */
 }
 
 @media (max-width: 600px) {
@@ -631,9 +632,10 @@ export default {
     flex-direction: column;
     min-width: 150px;
   }
-  #photo_couverture {
+
+  /* #photo_couverture {
     height: 200px;
-  }
+  } */
 
   #presentation_projet h1 {
     font-size: 1.8em;

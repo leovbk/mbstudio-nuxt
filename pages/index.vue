@@ -41,14 +41,15 @@ export default {
 }
 .portrait {
   position: relative;
-  top: 220px;
-  left: 16%;
-  width: 350px;
+  top: 200px;
+  left: 15%;
+  width: 400px;
   height: fit-content;
   color: black;
-  font-size: 24px;
-
-  /* text-shadow: 0 0 5px black; */
+  font-size: 26px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  padding: 40px;
 }
 
 .line {
@@ -64,7 +65,7 @@ export default {
 .bg2 {
   width: 100%;
   height: 100vh;
-  background-image: url('@/assets/images/Home/MBHOME-BG2RESIZE.jpg');
+  background-image: url('@/assets/images/Home/MBHOME-NEWBG2.jpg');
   background-size: cover;
 }
 
@@ -134,6 +135,7 @@ export default {
     top: 180px;
     font-size: 20px;
     width: 300px;
+    text-align: justify;
   }
 }
 
