@@ -458,7 +458,7 @@ export default {
   position: absolute;
   top: 80px;
   width: 100vw;
-  height: 350px;
+  height: 25vw;
   z-index: 0;
   background-color: white;
 }
@@ -609,7 +609,7 @@ export default {
   grid-area: t;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1250px) {
   #presentation_projet {
     margin: 40px 40px;
   }
