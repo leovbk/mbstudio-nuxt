@@ -8,7 +8,7 @@
     />
     <div id="presentation_projet">
       <h1 class="titre_projet">
-        <!-- {{ project.title }} -->
+        {{ project.title }}
       </h1>
       <div class="elementDescription">
         <h2 class="titreDescription">Domaine d'intervention</h2>
@@ -57,17 +57,14 @@
 </template>
 
 <script>
-// import SplitType from 'split-type'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-// import projetsData from './../../../assets/projets-data'
 
 export default {
   beforeRouteLeave(to, from, next) {
     const tlProjetOut = gsap.timeline()
     tlProjetOut.to('.masqueImg', {
       y: 0,
-      // opacity: 0,
       duration: 1,
     })
     tlProjetOut.to(['.titre_projet', '.titreDescription'], {
@@ -98,11 +95,10 @@ export default {
     )
 
     const prismicProject = []
-    console.log(document.results.length)
+
     for (let i = 0; i < document.results.length; i++) {
       prismicProject.push(document.results[i].data)
     }
-    console.log(prismicProject)
     return { prismicProject }
   },
 
@@ -110,9 +106,15 @@ export default {
     return {
       projetsData: [],
       projectIndex: '',
-      // project: this.prismicProject[0],
     }
   },
+
+  head() {
+    return {
+      title: `${this.project.name} | mb. studio`,
+    }
+  },
+
   computed: {
     projectId() {
       return this.$route.params.project
@@ -376,51 +378,17 @@ export default {
   },
 
   mounted() {
-    console.log(this.photosGrid)
+    console.log()
     window.scrollTo(0, 0)
     gsap.registerPlugin(ScrollTrigger)
-
-    // Split 1er lettre titre et injecter titreProjet
-
-    const laString = this.project.title
-
-    const titreProjet = document.querySelector('.titre_projet')
-
-    titreProjet.style.display = 'flex'
-    titreProjet.style.alignItems = 'baseline'
-
-    const divFirst = document.createElement('p')
-    const divSuite = document.createElement('p')
-
-    titreProjet.appendChild(divFirst)
-    titreProjet.appendChild(divSuite)
-
-    const firstLetter = laString.split('')[0]
-    const suiteLetterArray = laString
-      .split('')
-      .splice(1, laString.length)
-      .join('')
-
-    divFirst.innerHTML = firstLetter
-    divSuite.innerHTML = suiteLetterArray
-    divFirst.classList.add('firstLetter')
-
-    divFirst.style.fontSize = '2em'
-    divFirst.style.fontWeight = 'lighter'
-
-    // const splitTitle = new SplitType('.titre_projet', { types: 'chars' })
-    // splitTitle.chars[0].style.fontSize = '2.8em'
-    // splitTitle.chars[0].style.fontWeight = 'lighter'
 
     // timeline intro
 
     const tlProjetIn = gsap.timeline()
-
-    // tlProjetIn.from('.char', {
-    //   opacity: 0,
-    //   stagger: 0.02,
-    //   duration: 1.7
-    // })
+    tlProjetIn.to('.masqueImg', {
+      y: '100%',
+      duration: 1.2,
+    })
     tlProjetIn.from(['.titre_projet', '.titreDescription'], {
       x: '-10vw',
       opacity: 0,
@@ -428,11 +396,7 @@ export default {
       duration: 0.7,
       delay: -0.5,
     })
-    tlProjetIn.to('.masqueImg', {
-      y: '100%',
-      // opacity: 0,
-      duration: 1.2,
-    })
+
     tlProjetIn.from(['.textDescription', '#credit'], {
       opacity: 0,
       y: '-100%',
@@ -497,6 +461,13 @@ export default {
   margin: 2em 0 0.1em;
   font-weight: 600;
   z-index: 3;
+}
+
+.titre_projet::first-letter {
+  display: flex;
+  align-items: baseline;
+  font-size: 2em;
+  font-weight: lighter;
 }
 
 /* credit */

@@ -104,6 +104,11 @@ export default {
 
     tlContactOut.call(next)
   },
+  head() {
+    return {
+      title: 'Contact | mb. studio',
+    }
+  },
   mounted() {
     window.scrollTo(0, 0)
     this.returnChilds()

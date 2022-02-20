@@ -35,6 +35,11 @@
 <script>
 export default {
   name: 'Credits',
+  head() {
+    return {
+      title: 'Crédits | mb. studio',
+    }
+  },
   mounted() {
     window.scrollTo(0, 0)
   },

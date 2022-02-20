@@ -276,6 +276,11 @@
 <script>
 export default {
   name: 'CGV',
+  head() {
+    return {
+      title: 'CGV | mb. studio',
+    }
+  },
   mounted() {
     window.scrollTo(0, 0)
   },

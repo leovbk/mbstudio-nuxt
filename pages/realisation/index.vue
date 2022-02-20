@@ -53,6 +53,11 @@ export default {
   data() {
     return { projetsData: [], projectIndex: '', projectName: '' }
   },
+  head() {
+    return {
+      title: 'Réalisations | mb. studio',
+    }
+  },
   created() {
     // map projet data
     console.log(this.prismicProject)
