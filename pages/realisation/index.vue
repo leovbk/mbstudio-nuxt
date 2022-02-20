@@ -60,7 +60,6 @@ export default {
   },
   created() {
     // map projet data
-    console.log(this.prismicProject)
 
     for (const project in this.prismicProject) {
       this.projetsData[project] = {

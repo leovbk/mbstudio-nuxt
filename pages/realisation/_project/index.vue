@@ -378,7 +378,6 @@ export default {
   },
 
   mounted() {
-    console.log()
     window.scrollTo(0, 0)
     gsap.registerPlugin(ScrollTrigger)
 
