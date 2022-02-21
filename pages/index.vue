@@ -31,7 +31,7 @@ export default {
   mounted() {
     window.scrollTo(0, 0)
     homeGsapAnimation()
-    console.log('v1')
+    console.log('v2')
   },
 }
 </script>

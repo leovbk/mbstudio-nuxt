@@ -27,8 +27,13 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
+        content: 'mb. studio',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
         content:
-          "Margaux Bonfils, architecte d'intérieur pour particuliers et professionnels. mbstudio-architecture.com.",
+          "Margaux Bonfils, architecte d'intérieur pour particuliers et professionnels.",
       },
       {
         hid: 'og:image',
