@@ -24,22 +24,22 @@ export default {
         content:
           "Margaux Bonfils, architecte d'intérieur à Charleville-Mézières, Reims et ses alentours, pour particuliers et professionnels. mbstudio-architecture.com.",
       },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'mb. studio',
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content:
-          "Margaux Bonfils, architecte d'intérieur pour particuliers et professionnels.",
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'FBIMG.jpg',
-      },
+      // {
+      //   hid: 'og:title',
+      //   property: 'og:title',
+      //   content: 'mb. studio',
+      // },
+      // {
+      //   hid: 'og:description',
+      //   property: 'og:description',
+      //   content:
+      //     "Margaux Bonfils, architecte d'intérieur pour particuliers et professionnels.",
+      // },
+      // {
+      //   hid: 'og:image',
+      //   property: 'og:image',
+      //   content: 'FBIMG.jpg',
+      // },
     ],
     link: [
       {
