@@ -131,7 +131,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  flex: 1 1fr;
+  max-width: 1250px;
 }
 
 .projetMosaic a {
@@ -175,27 +175,6 @@ export default {
   opacity: 1;
 }
 
-/* .titreProjet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  line-height: 0.7;
-  width: 100%;
-  height: 100%;
-  font-size: x-large;
-  opacity: 0;
-} */
-
-/* .sousTitre {
-  position: absolute;
-  font-size: 12px;
-  top: 60%;
-  color: white;
-  z-index: 0;
-  pointer-events: none;
-} */
-
 .titreProjet {
   display: flex;
   justify-content: center;
@@ -214,7 +193,22 @@ export default {
   pointer-events: none;
 }
 
-/* .opacityClass {
-  opacity: 1;
-} */
+@media (max-width: 887px) {
+  .projetMosaic {
+    margin: 140px 40px;
+  }
+}
+
+@media (max-width: 728px) {
+  .photo {
+    width: 70vw;
+    height: 53vw;
+  }
+}
+
+@media (min-width: 1250px) {
+  .projetMosaic {
+    margin: 140px auto;
+  }
+}
 </style>
