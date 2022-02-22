@@ -31,7 +31,7 @@ export default {
   mounted() {
     window.scrollTo(0, 0)
     homeGsapAnimation()
-    console.log('v5')
+    console.log('v6')
   },
 }
 </script>
@@ -59,6 +59,7 @@ export default {
 .bg1 {
   width: 100%;
   height: 100vh;
+  min-height: 700px;
   background-image: url('@/assets/images/Home/home-01.jpg');
   background-size: cover;
 }
@@ -66,6 +67,7 @@ export default {
 .bg2 {
   width: 100%;
   height: 100vh;
+  min-height: 700px;
   background-image: url('@/assets/images/Home/MBHOME-NEWBG2.jpg');
   background-size: cover;
 }
@@ -178,6 +180,25 @@ export default {
   }
   .studio {
     top: 70vh;
+  }
+}
+
+@media (max-height: 700px) {
+  .bg1 p {
+    font-size: 180px;
+  }
+  .mb {
+    position: absolute;
+    top: 50vh;
+    left: 12%;
+    scale: 1;
+  }
+
+  .studio {
+    position: absolute;
+    top: 50vh;
+    left: calc(22% + 0.2em);
+    scale: 1;
   }
 }
 </style>
