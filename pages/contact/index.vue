@@ -20,7 +20,9 @@
           name="_subject"
           value="Salut Gomar, c'est le site qui te parles, tu as un nouveau message"
         />
-        <input type="hidden" name="_ captcha" value="false" />
+
+        <!-- <input type="hidden" name="_ captcha" value="true" /> -->
+
         <input type="hidden" name="_template" value="box" />
         <div class="grid-wrapper">
           <div class="grid_element">
