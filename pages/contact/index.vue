@@ -7,7 +7,7 @@
       <form
         id="contact-form"
         target="_blank"
-        action="https://formsubmit.co/leo.verbeke@hotmail.fr"
+        action="https://formsubmit.co/contact.mbstudio@gmail.com"
         method="POST"
       >
         <input
