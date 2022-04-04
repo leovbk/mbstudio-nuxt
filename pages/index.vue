@@ -31,7 +31,7 @@ export default {
   mounted() {
     window.scrollTo(0, 0)
     homeGsapAnimation()
-    console.log('v6')
+    console.log('v7')
   },
 }
 </script>
@@ -183,7 +183,7 @@ export default {
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 650px) {
   .bg1 p {
     font-size: 180px;
   }
