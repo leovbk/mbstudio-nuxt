@@ -16,6 +16,10 @@ export default {
       lang: 'fr',
     },
     meta: [
+      {
+        name: 'google-site-verification',
+        content: 'lK8t-WiAHfOch6DW-744QjbxTOJWHA5F1mMoqaSjoAU',
+      },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
