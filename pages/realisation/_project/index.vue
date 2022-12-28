@@ -131,215 +131,215 @@ export default {
     nbrRows() {
       return Math.ceil(this.nbrImages / 2)
     },
-    getGrid() {
-      if (this.nbrImages === 2) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-        `,
-        }
-      } else if (this.nbrImages === 3) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-        `,
-        }
-      } else if (this.nbrImages === 4) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d d'
-        `,
-        }
-      } else if (this.nbrImages === 5) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd e e'
-        `,
-        }
-      } else if (this.nbrImages === 6) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-        `,
-        }
-      } else if (this.nbrImages === 7) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g g'
-        `,
-        }
-      } else if (this.nbrImages === 8) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-        `,
-        }
-      } else if (this.nbrImages === 9) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g h'
-          'i i h'
-        `,
-        }
-      } else if (this.nbrImages === 10) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-          'i j h'
-        `,
-        }
-      } else if (this.nbrImages === 11) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g h'
-          'i i h'
-          'j k k'
-        `,
-        }
-      } else if (this.nbrImages === 12) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-          'i j h'
-          'k k l'
-        `,
-        }
-      } else if (this.nbrImages === 13) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g h'
-          'i i h'
-          'j k k'
-          'j l m'
-        `,
-        }
-      } else if (this.nbrImages === 14) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-          'i j h'
-          'k k l'
-          'm n n'
-        `,
-        }
-      } else if (this.nbrImages === 15) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g h'
-          'i i h'
-          'j k k'
-          'j l m'
-          'n n o'
-        `,
-        }
-      } else if (this.nbrImages === 16) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-          'i j h'
-          'k k l'
-          'm n n'
-          'm o p'
-        `,
-        }
-      } else if (this.nbrImages === 17) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g h'
-          'i i h'
-          'j k k'
-          'j l m'
-          'n n o'
-          'p q q'
-        `,
-        }
-      } else if (this.nbrImages === 18) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-          'i j h'
-          'k k l'
-          'm n n'
-          'm o p'
-          'q q r'
-        `,
-        }
-      } else if (this.nbrImages === 19) {
-        return {
-          gridTemplateAreas: `
-          'a b b'
-          'a c c'
-          'd d e'
-          'f g h'
-          'i i h'
-          'j k k'
-          'j l m'
-          'n n o'
-          'p q q'
-          'p r s'
-        `,
-        }
-      } else if (this.nbrImages === 20) {
-        return {
-          gridTemplateAreas: `
-          'a a b'
-          'c d e'
-          'c f f'
-          'g g h'
-          'i j h'
-          'k k l'
-          'm n n'
-          'm o p'
-          'q q r'
-          's t t'
-        `,
-        }
-      } else {
-        return {}
-      }
-    },
+    // getGrid() {
+    //   if (this.nbrImages === 2) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 3) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 4) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d d'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 5) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd e e'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 6) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 7) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g g'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 8) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 9) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g h'
+    //       'i i h'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 10) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //       'i j h'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 11) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g h'
+    //       'i i h'
+    //       'j k k'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 12) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //       'i j h'
+    //       'k k l'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 13) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g h'
+    //       'i i h'
+    //       'j k k'
+    //       'j l m'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 14) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //       'i j h'
+    //       'k k l'
+    //       'm n n'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 15) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g h'
+    //       'i i h'
+    //       'j k k'
+    //       'j l m'
+    //       'n n o'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 16) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //       'i j h'
+    //       'k k l'
+    //       'm n n'
+    //       'm o p'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 17) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g h'
+    //       'i i h'
+    //       'j k k'
+    //       'j l m'
+    //       'n n o'
+    //       'p q q'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 18) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //       'i j h'
+    //       'k k l'
+    //       'm n n'
+    //       'm o p'
+    //       'q q r'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 19) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a b b'
+    //       'a c c'
+    //       'd d e'
+    //       'f g h'
+    //       'i i h'
+    //       'j k k'
+    //       'j l m'
+    //       'n n o'
+    //       'p q q'
+    //       'p r s'
+    //     `,
+    //     }
+    //   } else if (this.nbrImages === 20) {
+    //     return {
+    //       gridTemplateAreas: `
+    //       'a a b'
+    //       'c d e'
+    //       'c f f'
+    //       'g g h'
+    //       'i j h'
+    //       'k k l'
+    //       'm n n'
+    //       'm o p'
+    //       'q q r'
+    //       's t t'
+    //     `,
+    //     }
+    //   } else {
+    //     return {}
+    //   }
+    // },
   },
   created() {
     // map projet data
@@ -484,6 +484,21 @@ export default {
 
 .gridProjet {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+.photoGrid {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 300px;
+  min-height: 450px;
+  transition: all 0.1s ease-in-out;
+}
+
+/*
+.gridProjet {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
 }
@@ -494,11 +509,13 @@ export default {
   min-height: 350px;
   transition: all 0.1s ease-in-out;
 }
+*/
 
 /* .photoGrid:hover {
   transform: scale(1.02);
 } */
 
+/*
 .photoGrid1 {
   grid-area: a;
 }
@@ -578,6 +595,7 @@ export default {
 .photoGrid20 {
   grid-area: t;
 }
+*/
 
 @media (max-width: 1250px) {
   #presentation_projet {
@@ -587,8 +605,8 @@ export default {
     margin: 0 40px 20px;
   }
   .photoGrid {
-    min-width: 150px;
-    min-height: 250px;
+    min-width: 350px;
+    min-height: 450px;
   }
 
   /* #photo_couverture {
@@ -596,7 +614,7 @@ export default {
   } */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .gridProjet {
     display: flex;
     flex-direction: column;
