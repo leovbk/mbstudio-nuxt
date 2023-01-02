@@ -212,7 +212,7 @@ textarea {
   position: relative;
   border-left: 1px solid #212121;
   border-right: 1px solid #212121;
-  font-family: 'EB Garamond', serif;
+  font-family: Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
   color: black;
