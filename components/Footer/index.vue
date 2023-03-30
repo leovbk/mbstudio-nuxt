@@ -10,7 +10,7 @@
       </p>
       <br />
       <p>06 09 86 23 95</p>
-      <p>contact.mbstudio@gmail.com</p>
+      <p>contact@mbstudio-architecture.fr</p>
       <br />
       <p>© 2022 Margaux Bonfils, Architecte d'intérieur et Scénographe</p>
       <p>
