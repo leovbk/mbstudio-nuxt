@@ -7,7 +7,7 @@
       <form
         id="contact-form"
         target="_blank"
-        action="https://formsubmit.co/contact.mbstudio@gmail.com"
+        action="https://formsubmit.co/contact@mbstudio-architecture.fr"
         method="POST"
       >
         <input
